@@ -10,18 +10,15 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "com.nano3labs.EchoCordovaPlugin.echo": "/Users/mike/projects/experiments/EchoCordovaPlugin",
-        "com.nano3labs.echocordovaplugin": "file:../EchoCordovaPlugin",
+        "com.nano3labs.echocordovaplugin": "file:../EchoCordovaPluginSwift",
         "cordova-ios": "^4.5.5",
-        "cordova-plugin-whitelist": "^1.3.3",
-        "echo": "/Users/mike/projects/experiments/EchoCordovaPlugin"
+        "cordova-plugin-add-swift-support": "^1.7.2",
+        "cordova-plugin-whitelist": "^1.3.3"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
-            "com.nano3labs.EchoCordovaPlugin": {},
-            "echo": {},
-            "com.nano3labs.EchoCordovaPlugin.echo": {}
+            "echo": {}
         },
         "platforms": [
             "ios"

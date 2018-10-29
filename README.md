@@ -1,6 +1,6 @@
 # Cordova Echo Extension
 
-This example project demonstrates how to create and extension for Cordova that uses native code.
+This example project demonstrates how to create and extension for Cordova that uses native swift code.
 
 ## Install
 

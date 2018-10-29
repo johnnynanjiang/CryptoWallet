@@ -23,7 +23,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <plugin name="com.nano3labs.EchoCordovaPlugin.echo" spec="/Users/mike/projects/experiments/EchoCordovaPlugin" />
-    <plugin name="echo" spec="/Users/mike/projects/experiments/EchoCordovaPlugin" />
-    <engine name="ios" spec="~4.5.5" />
+    <engine name="ios" spec="^4.5.5" />
+    <plugin name="echo" spec="/Users/mike/projects/experiments/EchoCordovaPluginSwift" />
 </widget>
