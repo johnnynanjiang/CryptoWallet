@@ -2,3 +2,5 @@ platforms
 node_modules
 cordova
 plugins
+.idea
+package-lock.json

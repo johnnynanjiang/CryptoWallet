@@ -23,6 +23,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="echo" spec="../EchoCordovaPluginSwift" />
     <engine name="ios" spec="^4.5.5" />
-    <plugin name="echo" spec="/Users/mike/projects/experiments/EchoCordovaPluginSwift" />
 </widget>
