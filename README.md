@@ -1,35 +1,46 @@
-# Cordova Echo Extension
+# Cordova TrustWalletCore Extension
 
-This example project demonstrates how to create and extension for Cordova that uses native swift code.
+This example project demonstrates how to use the TrustWalletCore cordova plugin
 
-For the Objective-C version go to https://github.com/nano3labs/echo-cordova
 
 ## Install
 
 1.
 
 ```
-git clone <echo-cordova-swift repo>
-git clone <echo-cordova-plugin-swift>
+git clone https://github.com/johnnynanjiang/CryptoWallet.git
+git clone https://github.com/johnnynanjiang/TrustWalletCoreCordovaPluginSwift.git
 ```
 
-You should now have `./echo-cordova-swift`, `./echo-cordova-plugin-swift`.
+You should now have `./CryptoWallet`, `./TrustWalletCoreCordovaPluginSwift`.
 
 Repos:
-* https://github.com/nano3labs/echo-cordova-swift
-* https://github.com/nano3labs/echo-cordova-plugin-swift
+* https://github.com/johnnynanjiang/CryptoWallet.git
+* https://github.com/johnnynanjiang/TrustWalletCoreCordovaPluginSwift.git
 
 2.
 ```
-cd ./echo-cordova
+cd ./CryptoWallet
 cordova platform add ios
-cordova plugin add /full/path/to/echo-cordova-plugin-swift
+cordova plugin add /full/path/to/TrustWalletCoreCordovaPluginSwift
 cordova build ios
 ```
 
 ## Running
 
-Open `platforms/ios/EchoCordova.xcworkspace` in xcode and run either on the device or emulator.
+Open `platforms/ios/CryptoWallet.xcworkspace` in xcode and run either on the device or emulator.
+
+### Implemented functions
+
+1. Create Wallet
+
+     Enter wallet name and password to create a new wallet. The alert message will return the wallet id. The wallet id is also      printed in the Xcode console. Copy wallet id, you will need it for mnemonic export.
+
+2. Export Mnemonic
+
+     Enter wallet id and password. The alert message will return the mnemonic.
+
+
 
 ## Notes
 * remember to run `cordova build ios` everytime you make a change to the javascript
