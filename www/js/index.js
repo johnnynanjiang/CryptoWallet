@@ -17,45 +17,60 @@
  * under the License.
  */
 var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+  // Application Constructor
+  initialize: function() {
+      document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+  },
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-        echoCall()
-        document.querySelector('#btn-echo').addEventListener('click', function() {
-          alert('called echo')
-          echoCall()
+  // deviceready Event Handler
+  //
+  // Bind any cordova events here. Common events are:
+  // 'pause', 'resume', etc.
+  onDeviceReady: function() {
+      this.receivedEvent('deviceready');
+      document.querySelector('#btn-createWallet').addEventListener('click', function() {
+        createWalletCall()
+      })
+      document.querySelector('#btn-exportMnemonic').addEventListener('click', function() {
+          exportMnemonicCall()
         })
-    },
+  },
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+  // Update DOM on a Received Event
+  receivedEvent: function(id) {
+      var parentElement = document.getElementById(id);
+      var listeningElement = parentElement.querySelector('.listening');
+      var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+      listeningElement.setAttribute('style', 'display:none;');
+      receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-    }
+      console.log('Received Event: ' + id);
+  }
 };
 
 app.initialize();
 
-function echoCall() {
-  if (window.echo) {
-    window.echo("echome", function(echoValue) {
-      alert(echoValue == "echome"); // should alert true.
+function createWalletCall() {
+let password = document.getElementById("password").value
+let walletName = document.getElementById("walletName").value
+if (window.createWallet) {
+  window.createWallet(walletName, password, function(msg) {
+    alert(msg)
+  });
+} else {
+  alert('No TrustWallet loaded')
+}
+}
+
+function exportMnemonicCall() {
+let passwordMn = document.getElementById("passwordMn").value
+let walletId= document.getElementById("walletId").value
+  if (window.exportMnemonic) {
+    window.exportMnemonic(walletId, passwordMn, function(mnemonic) {
+      alert(mnemonic)
     });
   } else {
-    alert('No echo loaded')
+    alert('No TrustWallet loaded')
   }
 }
