@@ -1,7 +1,7 @@
 # Cordova TrustWalletCore Extension
 
 This example project demonstrates how to use the TrustWalletCore cordova plugin
-Test
+
 
 
 ## Install
